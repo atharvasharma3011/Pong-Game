@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PingPong</title>
+    <link rel="stylesheet" type="" href="./style2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Urbanist", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-light-red">
+    <nav class="navbar navbar-expand-lg bg-white px-5 py-0">
+      <div class="container-fluid px-5">
+        <a class="navbar-brand logo" href="#">
+          <img src="./images/better.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-3 pb-2">
+            <li class="nav-item">
+              <a
+                class="nav-link pt-4 bg-red fw-bolder fs-5 text-white"
+                aria-current="page"
+                href="#"
+                >Setup</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pt-4 fw-bolder fs-5 text-red" href="#">App</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pt-4 fw-bolder fs-5 text-red" href="#"
+                >Account</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pt-4 fw-bolder fs-5 text-red">Setting</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid px-5 mt-5">
+      <div class="row mx-5 py-5 bg-white rounded-4">
+        <div class="col-4 text-red text-center">
+          <p class="fw-semibold my-0 ps-5" style="font-size: 7rem">
+            34<sup>°</sup>
+          </p>
+          <button
+            class="rounded-pill mt-2 bg-red px-5 py-3 text-white fw-semibold border-0 fs-3"
+          >
+            Center
+          </button>
+        </div>
+        <div class="col-4 text-red text-center">
+          <p class="fw-semibold my-0 ps-5" style="font-size: 7rem">
+            0<sup>°</sup>
+          </p>
+          <button
+            class="rounded-pill mt-2 bg-red px-5 py-3 text-white fw-semibold border-0 fs-3"
+          >
+            Left-Right
+          </button>
+        </div>
+        <div class="col-4 text-red text-center">
+          <p id="numberDisplay" class="fw-semibold my-0 ps-5" style="font-size: 7rem">1</p>
+          <div class="row mt-3 px-5 fw-semibold border-0 fs-3">
+            <div class="col d-flex justify-content-center align-items-center">
+              <button id="minusBtn" class="btn bg-red rounded-circle text-white px-4 py-2 fs-3">-</button>
+            </div>
+            <div class="col"><p class="text-red">Speed</p></div>
+            <div class="col d-flex justify-content-center align-items-center">
+              <button id="plusBtn" class="btn bg-red rounded-circle text-white px-4 py-2 fs-3">+</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="mt-5 pt-5 px-5 container-fluid bg-white vh-100">
+      <div class="row">
+        <div class="col" style="height: 90vh">
+          <div
+            class="row d-flex h-100 justify-content-center align-items-center"
+          >
+            <p
+              class="fw-semibold lh-1"
+              id="timerDisplay"
+              style="color: #4c356b; font-size: 4vw"
+            >
+              Time: 00:00
+            </p>
+
+            <p
+              class="fw-semibold lh-1"
+              id="scoreDisplay"
+              style="color: #4c356b; font-size: 4vw"
+            ></p>
+
+            <p
+              class="fw-semibold lh-1"
+              id="missDisplay"
+              style="color: #4c356b; font-size: 4vw"
+            ></p>
+
+            <p
+              class="fw-semibold lh-1"
+              id="percentageDisplay"
+              style="color: #4c356b; font-size: 4vw"
+            ></p>
+
+            <div class="d-flex row m-0 p-0">
+              <div class="col-8">
+                <button
+                  class="btn rounded-pill text-white w-100 fw-semibold"
+                  style="font-size: 3vw; background-color: #4c356b"
+                  id="startButton"
+                >
+                  Start
+                </button>
+                <button
+                  class="btn rounded-pill d-none text-white w-100 fw-semibold"
+                  style="font-size: 3vw; background-color: #4c356b"
+                  id="stopButton"
+                >
+                  Stop
+                </button>
+              </div>
+              <div class="col-4">
+                <button
+                  class="btn rounded-circle px-4 py-2 text-white fw-semibold"
+                  style="font-size: 3vw; background-color: #4c356b"
+                  id="resetButton"
+                >
+                  ↺
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-9">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <canvas
+              class="w-100"
+              id="gameCanvas"
+              style="
+                background-color: #4c356b;
+                border-top: 20px solid #ff7223;
+                border-right: 20px solid #ff7223;
+                border-left: 20px solid #ff7223;
+              "
+            ></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="game2.js"></script>
+  </body>
+</html>
